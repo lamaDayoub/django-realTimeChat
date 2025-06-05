@@ -11,6 +11,8 @@ django-allauth = "*"
 django-htmx = "*"
 channels = {extras = ["daphne"], version = "*"}
 python-dotenv = "*"
+channels-redis = "*"
+shortuuid = "*"
 
 [dev-packages]
 
