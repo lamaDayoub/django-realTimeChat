@@ -1,0 +1,20 @@
+{% extends 'layouts/blank.html' %}
+{% block content %}
+<div class="max-w-md mx-auto p-6">
+    <h1 class="text-2xl font-bold mb-4">Leave Chat Room</h1>
+    <p class="mb-6">Are you sure you want to leave "{{ chat_group.groupchat_name|default:chat_group.group_name }}"?</p>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <div class="flex gap-3">
+            <button type="submit" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">
+                Yes, Leave
+            </button>
+            <a href="{{ request.META.HTTP_REFERER|default:'/' }}" 
+               class="bg-gray-200 hover:bg-gray-300 px-4 py-2 rounded">
+                Cancel
+            </a>
+        </div>
+    </form>
+</div>
+{% endblock %}
